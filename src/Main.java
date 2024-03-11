@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws ClassNotFoundException{
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введіть назву класу: ");
+        new GUI(); // Запуск GUI
+        System.out.print("Введіть клас: ");
         String Class = scanner.next();
-        String description = Analizator.GetClassDescription(Class);
-        System.out.println(description);
+        Console.printClassDescription(Class); // Виклик аналізу через консоль
     }
 }
