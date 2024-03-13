@@ -37,7 +37,7 @@ public class GUI {
         analyzeButton.addActionListener(e -> {
             String className = inputField.getText();
             try {
-                Analizator analyzer = new Analizator(className);
+                Task1 analyzer = new Task1(className);
                 outputArea.setText(analyzer.toString());
             } catch (ClassNotFoundException ex) {
                 outputArea.setText("Class not found");

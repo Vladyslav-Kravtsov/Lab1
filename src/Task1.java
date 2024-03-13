@@ -1,6 +1,6 @@
 import java.lang.reflect.*;
 
-public class Analizator {
+public class Task1 {
     private final String packageName;
     private final String modifiers;
     private final String className;
@@ -9,7 +9,7 @@ public class Analizator {
     private final String constructors;
     private final String methods;
 
-    public Analizator(String typeName) throws ClassNotFoundException {
+    public Task1(String typeName) throws ClassNotFoundException {
         Class<?> cls = Class.forName(typeName);
         packageName = (cls.getPackage() != null) ? cls.getPackage().getName() : "No package";
 
