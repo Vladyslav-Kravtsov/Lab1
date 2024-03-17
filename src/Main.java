@@ -26,5 +26,40 @@ public class Main {
         }
         System.out.println("\n\n");
 
+        System.out.println("Завдання №4");
+        // Створення масиву типу int
+        Integer[] intArray = Task4.createArray(Integer.class, 2);
+        System.out.println("int[] = " + Task4.arrayToString(intArray));
+
+        // Створення масиву типу String
+        String[] stringArray = Task4.createArray(String.class, 3);
+        System.out.println("String[] = " + Task4.arrayToString(stringArray));
+
+        // Створення масиву типу double
+        Double[] doubleArray = Task4.createArray(Double.class, 5);
+        System.out.println("double[] = " + Task4.arrayToString(doubleArray));
+
+        // Створення матриці типу int
+        Integer[][] intMatrix = Task4.createMatrix(Integer.class, 3, 5);
+        System.out.println("int[][] = " + Task4.arrayToString(intMatrix));
+
+        //Зміна розмірів масиву типу String
+        stringArray = Task4.resizeArray(stringArray, 2);
+        System.out.println("String[] = " + Task4.arrayToString(stringArray));
+
+        // Зміна розмірів матриці
+        intMatrix = Task4.resizeMatrix(intMatrix, 4, 6);
+        System.out.println("int[][] = " + Task4.arrayToString(intMatrix));
+
+        // Зміна розмірів матриці
+        intMatrix = Task4.resizeMatrix(intMatrix, 3, 7);
+        System.out.println("int[][] = " + Task4.arrayToString(intMatrix));
+
+        // Задання деяких значень матриці
+        intMatrix[0][0] = 0;
+        intMatrix[0][1] = 1;
+        intMatrix[1][0] = 10;
+        intMatrix[1][1] = 11;
+        System.out.println("int[][] = " + Task4.arrayToString(intMatrix));
     }
 }
