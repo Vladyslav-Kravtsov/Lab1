@@ -1,3 +1,4 @@
+import java.lang.reflect.Proxy;
 import java.util.Scanner;
 
 public class Main {
@@ -25,6 +26,7 @@ public class Main {
             System.out.println("Error: " + e.getMessage());
         }
         System.out.println("\n\n");
+
 
         System.out.println("Завдання №4");
         // Створення масиву типу int
@@ -61,5 +63,34 @@ public class Main {
         intMatrix[1][0] = 10;
         intMatrix[1][1] = 11;
         System.out.println("int[][] = " + Task4.arrayToString(intMatrix));
+        System.out.println("\n\n");
+
+        System.out.println("Завдання №5");
+        Evaluatable f1 = new Function1();
+        Evaluatable f2 = new Function2();
+
+        Evaluatable f1Proxy = (Evaluatable) Proxy.newProxyInstance(
+                Evaluatable.class.getClassLoader(),
+                new Class<?>[]{Evaluatable.class},
+                new ProfilingInvocationHandler(f1));
+
+        Evaluatable f2Proxy = (Evaluatable) Proxy.newProxyInstance(
+                Evaluatable.class.getClassLoader(),
+                new Class<?>[]{Evaluatable.class},
+                new ProfilingInvocationHandler(f2));
+
+        f1Proxy = (Evaluatable) Proxy.newProxyInstance(
+                Evaluatable.class.getClassLoader(),
+                new Class<?>[]{Evaluatable.class},
+                new TracingInvocationHandler(f1Proxy));
+
+        f2Proxy = (Evaluatable) Proxy.newProxyInstance(
+                Evaluatable.class.getClassLoader(),
+                new Class<?>[]{Evaluatable.class},
+                new TracingInvocationHandler(f2Proxy));
+
+        System.out.println("[Exp(-|2.5| * x) * sin(x)].eval(1.0) = " + f1Proxy.eval(1.8));
+        System.out.println("\n");
+        System.out.println("[x * x].eval(1.0) = " + f2Proxy.eval(1.0));
     }
 }

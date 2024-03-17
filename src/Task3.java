@@ -43,12 +43,12 @@ class Task3 {
     }
 
     public double func(double a) {
-            return Math.exp(-Math.abs(a) * x) * Math.sin(x);
+        double x = 1.0;
+        return Math.exp(-Math.abs(a) * x) * Math.sin(x);
         }
 
         public double pow(double a, int b) {
-            return Math.pow(a, b) + x;
+            return Math.pow(a, b);
         }
 
-        private final double x = 1.0;
-    }
+}
