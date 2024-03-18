@@ -45,7 +45,6 @@ public class GUI {
             }
         });
 
-        // Додамо слухача для кнопки очищення
         clearButton.addActionListener(e -> {
             outputArea.setText(null);
             inputField.setText(null);

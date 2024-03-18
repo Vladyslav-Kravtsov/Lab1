@@ -7,8 +7,4 @@ public class Console {
             e.printStackTrace();
         }
     }
-
-    public static void main(String[] args) {
-        printClassDescription("java.lang.String");
-    }
 }
